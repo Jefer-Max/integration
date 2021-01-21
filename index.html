@@ -19,30 +19,62 @@
         <div class="box-music">
           <div class="music">
             <div class="music__btn">
-              <button class="btn youtube"></button>
+              <button class="btn youtube" id="youtube"></button>
             </div>
-            <form class="js-youtube-search">
-              <div class="music__search">
-                <input type="text" class="search-text" name="youtube" />
-                <a type="submit" href="#" class="search-button">
-                  <i class="fas fa-search"></i>
-                </a>
+
+            <div id="showYoutube" class="show-content">
+              <div class="show-content__content">
+                <span class="close">×</span>
+                <form class="js-youtube-search">
+                  <div class="music__search">
+                    <input type="text" class="search-text" name="youtube" />
+                    <button type="submit" class="submitbtn">
+                      <i class="fas fa-search"></i>
+                    </button>
+                  </div>
+                </form>
+
+                <div class="iframe-container">
+                  <iframe
+                    id="youtubeiframe"
+                    src=""
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                  ></iframe>
+                </div>
               </div>
-            </form>
+            </div>
           </div>
 
           <div class="music">
             <div class="music__btn">
-              <button class="btn soundcloud"></button>
+              <button class="btn soundcloud" id="youtube"></button>
             </div>
-            <form class="js-soundcloud-search">
-              <div class="music__search">
-                <input type="text" class="search-text" />
-                <a href="#" class="search-button">
-                  <i class="fas fa-search"></i>
-                </a>
+
+            <div id="showSoundcloud" class="show-content">
+              <div class="show-content__content">
+                <span class="close">×</span>
+                <form class="js-soundcloud-search">
+                  <div class="music__search">
+                    <input type="text" class="search-text" name="soundcloud" />
+                    <button type="submit" class="submitbtn">
+                      <i class="fas fa-search"></i>
+                    </button>
+                  </div>
+                </form>
+
+                <div class="iframe-container">
+                  <iframe
+                    id="youtubeiframe"
+                    src=""
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                  ></iframe>
+                </div>
               </div>
-            </form>
+            </div>
           </div>
         </div>
       </div>

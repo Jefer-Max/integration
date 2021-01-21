@@ -56,7 +56,7 @@
   align-items: center;
   background: black;
   background: white;
-  padding: 0.5rem;
+  padding: 0 0.5rem;
   height: 2.5rem;
   border-radius: 5px;
   border: 2px solid gray;
@@ -66,33 +66,22 @@
 
 .search-text {
   border: none;
-  background: none;
+  background: white;
   outline: none;
   color: black;
   font-size: 18px;
   float: left;
-  line-height: 50px;
+
   transition: 0.5s;
   width: 0%;
 }
 
 .music__search:hover {
-  width: 100%;
+  width: 90%;
 }
 
 .music__search:hover > .search-text {
   width: 80%;
-}
-
-.search-button {
-  width: 2.2rem;
-  height: 1.5rem;
-  text-decoration: none;
-  color: gray;
-  font-size: 20px;
-  border: none;
-  background: white;
-  border-radius: 50%;
 }
 
 .fa-search {
@@ -104,6 +93,64 @@ form {
   margin-bottom: 2rem;
 }
 
+.submitbtn {
+  border: none;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  color: gray;
+}
+
+.show-content {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 25%;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.show-content .show-content__content {
+  background-color: #f4f4f4;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid lightgray;
+  border-top: 5px solid red;
+  width: 90%;
+  height: 60%;
+}
+.show-content .close {
+  color: red;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.show-youtube .close:hover {
+  color: rgb(196, 0, 0);
+}
+
+.iframe-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  text-align: center;
+}
+
+.iframe-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80%;
+}
+
 /* responsive */
 @media screen and (min-width: 780px) {
   .box-music {
@@ -113,5 +160,15 @@ form {
   .music__btn {
     width: 12rem;
     height: 10rem;
+  }
+  .show-content {
+    padding-top: 12%;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .show-content .show-content__content {
+    width: 70%;
+    height: 90%;
   }
 }
