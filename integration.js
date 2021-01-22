@@ -7,18 +7,14 @@ const options = {
     "content-type": "application/json",
   },
 };
-
-const $youtubeSearch = document.querySelector(".js-youtube-search");
+const $youtubeSearch = document.querySelector(".js-search");
 const youtubeiframe = document.querySelector("#youtubeiframe");
-
 $youtubeSearch.addEventListener("submit", searchYoutube);
 //call API
 function searchYoutube(ev) {
   ev.preventDefault();
-
   const query = ev.target.youtube.value;
   const search = `${API}&part=snippet&maxResults=10&q=${query}`;
-
   fetch(search)
     .then((rest) => rest.json())
     .then((data) => {
@@ -33,10 +29,11 @@ function searchYoutube(ev) {
     );
 }
 
+//console.warn(data)
 //show iframe
-if (document.getElementById("youtube")) {
-  var show = document.getElementById("showYoutube");
-  var btn = document.getElementById("youtube");
+if (document.getElementById("open")) {
+  var show = document.getElementById("showOpen");
+  var btn = document.getElementById("open");
   var span = document.getElementsByClassName("close")[0];
   var body = document.getElementsByTagName("body")[0];
 
@@ -53,7 +50,7 @@ if (document.getElementById("youtube")) {
   };
   window.addEventListener("keyup", function (e) {
     if (e.keyCode == 27) {
-      document.getElementById("showYoutube").style.display = "none";
+      document.getElementById("showOpen").style.display = "none";
     }
   });
 }

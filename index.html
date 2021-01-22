@@ -19,13 +19,12 @@
         <div class="box-music">
           <div class="music">
             <div class="music__btn">
-              <button class="btn youtube" id="youtube"></button>
+              <button class="btn youtube" id="open"></button>
             </div>
-
-            <div id="showYoutube" class="show-content">
+            <div id="showOpen" class="show-content">
               <div class="show-content__content">
                 <span class="close">×</span>
-                <form class="js-youtube-search">
+                <form class="js-search">
                   <div class="music__search">
                     <input type="text" class="search-text" name="youtube" />
                     <button type="submit" class="submitbtn">
@@ -33,7 +32,6 @@
                     </button>
                   </div>
                 </form>
-
                 <div class="iframe-container">
                   <iframe
                     id="youtubeiframe"
@@ -46,16 +44,14 @@
               </div>
             </div>
           </div>
-
           <div class="music">
             <div class="music__btn">
-              <button class="btn soundcloud" id="youtube"></button>
+              <button class="btn soundcloud" id="open"></button>
             </div>
-
-            <div id="showSoundcloud" class="show-content">
-              <div class="show-content__content">
-                <span class="close">×</span>
-                <form class="js-soundcloud-search">
+            <div id="showOpen" class="show-content">
+              <div class="show-content__content sc">
+                <span class="close sc">×</span>
+                <form class="js-search">
                   <div class="music__search">
                     <input type="text" class="search-text" name="soundcloud" />
                     <button type="submit" class="submitbtn">
@@ -63,10 +59,9 @@
                     </button>
                   </div>
                 </form>
-
                 <div class="iframe-container">
                   <iframe
-                    id="youtubeiframe"
+                    id="soundcloudiframe"
                     src=""
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
