@@ -9,27 +9,47 @@ const options = {
 };
 const $youtubeSearch = document.querySelector(".js-search");
 const youtubeiframe = document.querySelector("#youtubeiframe");
+const searchlist = document.querySelector(".js-music-search");
 $youtubeSearch.addEventListener("submit", searchYoutube);
+
+function renderVideo(e) {}
+
 //call API
 function searchYoutube(ev) {
   ev.preventDefault();
+  searchlist.innerHTML = ""; //limpiar
   const query = ev.target.youtube.value;
-  const search = `${API}&part=snippet&maxResults=10&q=${query}`;
+  const search = `${API}&part=snippet&maxResults=6&q=${query}&type=video`;
   fetch(search)
     .then((rest) => rest.json())
     .then((data) => {
-      console.log(youtubeiframe);
-      youtubeiframe.setAttribute(
-        "src",
-        `https://www.youtube.com/embed/${data.items[0].id.videoId}`
-      );
+      console.log(data);
+
+      data.items.forEach((video) => {
+        let templatelist = `
+        <div>
+          <li><button aria-label="${video.snippet.title}" data-id-video="${video.id.videoId}">${video.snippet.title}</button></li>
+        </div>`;
+        searchlist.insertAdjacentHTML("beforeend", templatelist);
+      });
     })
     .catch((err) =>
       console.error("Error when getting the videos from youtube: ", err)
     );
 }
 
-//console.warn(data)
+searchlist.addEventListener("click", (e) => {
+  e.preventDefault();
+  if (e.target.tagName === "BUTTON") {
+    let button = e.target;
+    let videoId = button.getAttribute("data-id-video");
+    youtubeiframe.setAttribute(
+      "src",
+      `https://www.youtube.com/embed/${videoId}`
+    );
+  }
+});
+
 //show iframe
 if (document.getElementById("open")) {
   var show = document.getElementById("showOpen");

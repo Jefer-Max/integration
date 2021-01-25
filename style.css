@@ -61,7 +61,7 @@
   border-radius: 5px;
   border: 2px solid gray;
   transition: 0.8s;
-  width: 8rem;
+  width: 90%;
 }
 
 .search-text {
@@ -76,8 +76,8 @@
   width: 0%;
 }
 
-.music__search:hover {
-  width: 90%;
+.iconcenter {
+  text-align: center;
 }
 
 .music__search:hover > .search-text {
@@ -150,19 +150,43 @@ form {
 }
 
 .iframe-container {
+  display: flex;
+  flex-direction: column;
   position: relative;
-  padding-bottom: 50%;
+
+  width: 100%;
   height: 100%;
   overflow: hidden;
   text-align: center;
 }
 
 .iframe-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
+  padding: 0.5rem;
   height: 100%;
+}
+
+.js-music-search {
+  display: flex;
+  width: 90%;
+  flex-direction: column;
+  padding: 0 1rem;
+  text-align: left;
+  justify-content: center;
+  list-style: none;
+  margin-bottom: 1rem;
+}
+.js-music-search > div {
+  padding: 0.2rem;
+}
+
+.js-music-search li button {
+  background: #f4f4f4;
+  text-align: left;
+  border: none;
+}
+.js-music-search li button:hover {
+  background: #e9e9e9;
 }
 
 /* responsive */
@@ -179,7 +203,11 @@ form {
     padding-top: 10%;
   }
   .show-content .show-content__content {
-    width: 70%;
+    width: 80%;
+    height: 80%;
+  }
+  .iframe-container iframe {
+    height: 50%;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -196,5 +224,32 @@ form {
   }
   .show-content .show-content__content {
     width: 65%;
+  }
+  .iframe-container {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    padding-bottom: 10%;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .iframe-container iframe {
+    float: right;
+    width: 60%;
+    height: 60%;
+  }
+
+  .js-music-search {
+    display: flex;
+    width: 40%;
+    float: left;
+    flex-direction: column;
+    padding: 0 1rem;
+    text-align: left;
+    justify-content: flex-start;
+    list-style: none;
   }
 }

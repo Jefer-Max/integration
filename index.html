@@ -19,20 +19,31 @@
         <div class="box-music">
           <div class="music">
             <div class="music__btn">
-              <button class="btn youtube" id="open"></button>
+              <button
+                aria-label="Enter Youtube"
+                class="btn youtube"
+                id="open"
+              ></button>
             </div>
             <div id="showOpen" class="show-content">
               <div class="show-content__content">
-                <span class="close">×</span>
+                <span aria-label="Close" class="close">×</span>
                 <form class="js-search">
                   <div class="music__search">
-                    <input type="text" class="search-text" name="youtube" />
+                    <input
+                      type="text"
+                      placeholder="Search"
+                      class="search-text"
+                      name="youtube"
+                    />
                     <button type="submit" class="submitbtn">
                       <i class="fas fa-search"></i>
                     </button>
                   </div>
                 </form>
+
                 <div class="iframe-container">
+                  <div class="js-music-search"></div>
                   <iframe
                     id="youtubeiframe"
                     src=""
@@ -47,28 +58,6 @@
           <div class="music">
             <div class="music__btn">
               <button class="btn soundcloud" id="open"></button>
-            </div>
-            <div id="showOpen" class="show-content">
-              <div class="show-content__content sc">
-                <span class="close sc">×</span>
-                <form class="js-search">
-                  <div class="music__search">
-                    <input type="text" class="search-text" name="soundcloud" />
-                    <button type="submit" class="submitbtn">
-                      <i class="fas fa-search"></i>
-                    </button>
-                  </div>
-                </form>
-                <div class="iframe-container">
-                  <iframe
-                    id="soundcloudiframe"
-                    src=""
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
-                  ></iframe>
-                </div>
-              </div>
             </div>
           </div>
         </div>
